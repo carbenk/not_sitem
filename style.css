@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fdfdfd;
+  color: #222;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#pdfList a {
+  display: block;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f2f2f2;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+#pdfList a:hover {
+  background: #e0e0e0;
+}
