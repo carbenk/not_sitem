@@ -21,11 +21,21 @@ fetch("metadata.json")
       pdfList.innerHTML = "";
       data.forEach((item) => {
         if (selected === "hepsi" || item.ders === selected) {
-          const link = document.createElement("a");
-          link.href = `notlar/${item.file}`;
-          link.target = "_blank";
-          link.textContent = `${item.ders} – ${item.title} (${item.tarih})`;
-          pdfList.appendChild(link);
+          const container = document.createElement("div");
+          container.classList.add("pdf-entry");
+
+          const title = document.createElement("h3");
+          title.textContent = `${item.ders} – ${item.title} (${item.tarih})`;
+
+          const iframe = document.createElement("iframe");
+          iframe.src = `notlar/${item.file}`;
+          iframe.width = "100%";
+          iframe.height = "600px";
+          iframe.loading = "lazy";
+
+          container.appendChild(title);
+          container.appendChild(iframe);
+          pdfList.appendChild(container);
         }
       });
     };
