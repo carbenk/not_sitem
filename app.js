@@ -28,10 +28,8 @@ fetch("metadata.json")
           title.textContent = `${item.ders} – ${item.title} (${item.tarih})`;
 
           const iframe = document.createElement("iframe");
-          const encodedURL = encodeURIComponent(
-            `${window.location.origin}/${item.file}`
-          );
-          iframe.src = `https://docs.google.com/gview?url=${encodedURL}&embedded=true`;
+          const rawURL = `https://raw.githubusercontent.com/carbenk/not_sitem/main/${item.file}`;
+          iframe.src = `https://docs.google.com/gview?url=${encodeURIComponent(rawURL)}&embedded=true`;
           iframe.width = "100%";
           iframe.height = "600px";
           iframe.loading = "lazy";
